@@ -70,6 +70,14 @@ const handleLogin = () => {
         Don't have an account?
         <router-link to="/register" class="text-blue-500 hover:underline">Register</router-link>
       </p>
+
+      <!-- Kembali ke Home -->
+      <p class="text-sm text-gray-600 mt-2 text-center">
+        Back to Home?
+        <router-link to="/" class="text-blue-500 hover:underline">Home</router-link>
+      </p>
+
+
     </div>
   </div>
 </template>

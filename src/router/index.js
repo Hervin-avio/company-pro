@@ -1,24 +1,63 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Services from '../views/Services.vue'
-import Gallery from '../views/Gallery.vue'
-import Contact from '../views/Contact.vue'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
-import Reset from '../views/Reset.vue'
-
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/services', name: 'Services', component: Services },
-  { path: '/gallery', name: 'Gallery', component: Gallery },
-  { path: '/about', name: 'About', component: About },
-  { path: '/contact', name: 'Contact', component: Contact },
-  { path: '/login', name: 'Login', component: Login },
-  { path: '/register', name: 'Register', component: Register },
-  { path: '/reset', name: 'Reset', component: Reset }
+  // 🟩 Layout Default (dengan header/footer)
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/Home.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
+  {
+    path: '/services',
+    name: 'Services',
+    component: () => import('@/views/Services.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
+  {
+    path: '/gallery',
+    name: 'Gallery',
+    component: () => import('@/views/Gallery.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/About.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('@/views/Contact.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
+  {
+    path: '/product/:id',
+    name: 'ProductDetail',
+    component: () => import('@/views/ProductDetail.vue'),
+    meta: { layout: 'DefaultLayout' }
+  },
 
+  // 🟥 Layout Kosong (tanpa header/footer)
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/Login.vue'),
+    meta: { layout: 'BlankLayout' }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/Register.vue'),
+    meta: { layout: 'BlankLayout' }
+  },
+  {
+    path: '/reset',
+    name: 'Reset',
+    component: () => import('@/views/Reset.vue'),
+    meta: { layout: 'BlankLayout' }
+  },
 ]
 
 const router = createRouter({

@@ -141,7 +141,7 @@ onBeforeUnmount(() => stopAuto())
             Klaim Promo
           </button>
         </div>
-        <img :src="promoBanner.img" alt="promo" class="w-28 h-28 object-cover rounded-xl" />
+        <img :src="promoBanner.img" alt="promo" class="w-32 h-32 object-contain rounded-xl" />
       </div>
     </div>
 
@@ -165,9 +165,11 @@ onBeforeUnmount(() => stopAuto())
           <span class="text-sm font-medium h-10 overflow-hidden leading-5">{{ p.title }}</span>
           <span class="text-red-600 font-bold mt-2">{{ p.price }}</span>
           <span v-if="p.discount" class="text-xs text-gray-500">{{ p.discount }}</span>
-          <button class="mt-3 bg-blue-600 text-white text-sm px-3 py-2 rounded-xl hover:bg-blue-700">
-            Beli
-          </button>
+          <router-link 
+          :to="`/product/${p.id}`"
+          class="block w-full bg-blue-500 text-white py-2 text-center rounded-lg hover:bg-blue-600 transition">
+          Beli
+        </router-link>
         </div>
       </div>
     </section>
